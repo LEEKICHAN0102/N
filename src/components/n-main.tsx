@@ -42,7 +42,7 @@ export default function NMain() {
         </span>
         <span className="italic">당신을 위한 특별한 커뮤니티</span>
         <div className="flex justify-center items-center rounded-full w-full h-16 p-3 bg-orange-400 mt-12">
-          <Link className="flex gap-5" href="/chat-room">
+          <Link className="flex gap-5" href="/chats">
             <GrFormNextLink className="scale-125" />채팅방 둘러보기
           </Link>
         </div>
