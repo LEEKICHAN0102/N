@@ -31,7 +31,7 @@ export default function NMain() {
   }, []);
 
   return (
-    <div className="w-screen h-screen p-12 flex gap-20 justify-center items-center">
+    <div className="w-auto h-auto p-12 flex gap-20 justify-center items-center">
       <div className="flex flex-col gap-3 font-bold text-3xl">
         <span
           className={`transition-all duration-1000 ease-in-out ${

@@ -4,6 +4,9 @@ import NMain from "@/components/n-main";
 
 export default function Home() {
   return (
-    <NMain />
+    <main className="h-screen w-screen p-5 overflow-x-hidden">
+      <Header />
+      <NMain />
+    </main>
   );
 }
