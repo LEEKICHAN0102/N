@@ -2,9 +2,9 @@ import { IoPeople } from "react-icons/io5";
 
 export default function ChatRoom() {
   return(
-    <div className="bg-amber-100 min-h-72 max-w-64 flex flex-col p-3 items-center rounded-md border-gray-400 gap-5 cursor-pointer">
+    <div className="bg-amber-100 min-h-72 max-w-64 flex flex-col p-5 items-center rounded-md border-gray-400 gap-5 cursor-pointer">
       <span className="font-bold text-md text-black">헤라클레스 장수풍뎅이 VS 코카서스 장수풍뎅이</span>
-      <div className="flex gap-2 items-center justify-start w-64 p-3">
+      <div className="flex gap-2 items-center justify-start w-64 p-5">
         <span className="flex items-center justify-center p-3 text-sm font-bold rounded-full w-auto h-8 bg-gray-400">곤충</span>
         <span className="flex items-center justify-center p-3 text-sm font-bold rounded-full w-auto h-8 bg-gray-400">기타</span>
       </div>
