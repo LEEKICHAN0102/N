@@ -50,8 +50,8 @@ export default function NMain() {
       <div className="w-1/3 h-auto bg-inherit">
         <Image 
           src={n_main} 
-          alt="N Main Logo" 
-          layout="responsive" 
+          alt="N Main Logo"
+          priority
           className="rounded-lg"
         />
       </div>

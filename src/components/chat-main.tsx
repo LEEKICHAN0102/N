@@ -12,7 +12,7 @@ export default function ChatMain() {
         <Image 
           src={chat_main} 
           alt="N Main Logo" 
-          layout="responsive" 
+          priority
           className="rounded-lg"
         />
       </div>
