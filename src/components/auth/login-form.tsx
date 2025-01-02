@@ -10,7 +10,10 @@ import { FirebaseError } from "firebase/app";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
-import { GrFormNextLink } from "react-icons/gr";
+import { GrFormNextLink, GrHome } from "react-icons/gr";
+
+//store
+import { useAuthStore } from "@/store/authStore";
 
 type FormValues = {
   email: string;
@@ -28,13 +31,20 @@ export default function Login() {
     formState: { errors },
   } = useForm<FormValues>();
 
+  const setIsLogin = useAuthStore((state) => state.setIsLogin);
+
   const onSubmit = async (data: FormValues) => {
     setLoading(true);
     setError(null);
 
     try {
-      await signInWithEmailAndPassword(auth, data.email, data.password);
+      const userCredentials = await signInWithEmailAndPassword(auth, data.email, data.password);
+      const token = await userCredentials.user.getIdToken();
 
+      console.log(userCredentials," 유저");
+      console.log(token," 토큰");
+      setIsLogin(true);
+      
       router.push("/");
     } catch (error) {
       if (error instanceof FirebaseError) {
@@ -94,6 +104,11 @@ export default function Login() {
           height={50}
           className="rounded-lg bg-white p-1 cursor-pointer"
         />
+        <div className="flex items-center justify-center bg-white text-black rounded w-[50px] h-[50px] cursor-pointer">
+          <Link href={"/"}>
+            <GrHome size={24} />
+          </Link>
+        </div>
       </div>
       <Link href="/join">
         <span className="font-bold text-blue-300 text-xl flex gap-5 items-center mt-10">
@@ -104,3 +119,4 @@ export default function Login() {
     </main>
   );
 }
+
